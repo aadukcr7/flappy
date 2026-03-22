@@ -1,6 +1,6 @@
-# Flappy Bird (Python + Web)
+# Flapping Ball (Python + Web)
 
-A simple Flappy Bird clone with:
+A simple Flapping Ball game with:
 - A desktop version in Python (`tkinter`)
 - A browser version for GitHub Pages (`HTML/CSS/JavaScript`)
 

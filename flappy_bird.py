@@ -34,7 +34,7 @@ TEXT_COLOR = "#1f1f1f"
 class FlappyBirdApp:
     def __init__(self, root: tk.Tk) -> None:
         self.root = root
-        self.root.title("Flappy Bird")
+        self.root.title("Flapping Ball")
         self.root.resizable(False, False)
 
         self.canvas = tk.Canvas(root, width=WIDTH, height=HEIGHT, bg=SKY_BOTTOM)
