@@ -36,3 +36,4 @@ Open `index.html` locally, or deploy this repository to GitHub Pages.
 ## Notes
 - `flappy_bird.py` is still a desktop app and runs locally with Python.
 - GitHub Pages runs the web version starting from `index.html`.
+- If your latest `game.js` changes do not appear on Pages, bump the version query in `index.html` (for example, `game.js?v=20260322`) and redeploy.
