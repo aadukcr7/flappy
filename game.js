@@ -16,7 +16,7 @@ const FLAP_STRENGTH = -8.5;
 
 const PIPE_WIDTH = 70;
 const PIPE_GAP = 160;
-const PIPE_SPEED = 3.2;
+const PIPE_SPEED = 2.2;
 const PIPE_INTERVAL_MS = 1600;
 const BASE_FRAME_MS = 1000 / 60;
 
