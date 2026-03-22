@@ -1,6 +1,8 @@
-# Flappy Bird (Python + Tkinter)
+# Flappy Bird (Python + Web)
 
-A simple Flappy Bird clone built with Python's built-in `tkinter` GUI toolkit.
+A simple Flappy Bird clone with:
+- A desktop version in Python (`tkinter`)
+- A browser version for GitHub Pages (`HTML/CSS/JavaScript`)
 
 ## Run locally
 
@@ -12,12 +14,25 @@ A simple Flappy Bird clone built with Python's built-in `tkinter` GUI toolkit.
 python flappy_bird.py
 ```
 
+## Play in browser
+
+Open `index.html` locally, or deploy this repository to GitHub Pages.
+
+### GitHub Pages setup
+1. Push these files to your repository root:
+	- `index.html`
+	- `style.css`
+	- `game.js`
+2. In GitHub, go to **Settings -> Pages**.
+3. Under **Build and deployment**, set:
+	- **Source**: `Deploy from a branch`
+	- **Branch**: `main` (or your branch), folder `/ (root)`
+4. Save, then open the generated Pages URL.
+
 ## Controls
 - `Space` or left mouse click: flap
 - After game over: `Space` or click to restart
 
-## GitHub Pages note
-This project is a desktop Python app (`tkinter`), so it **cannot run on GitHub Pages directly**.
-GitHub Pages only hosts static web apps (`HTML/CSS/JavaScript`).
-
-If you want this playable in a browser, it needs a web version (for example JavaScript/Canvas or Phaser).
+## Notes
+- `flappy_bird.py` is still a desktop app and runs locally with Python.
+- GitHub Pages runs the web version starting from `index.html`.
