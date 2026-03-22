@@ -18,6 +18,7 @@ const PIPE_WIDTH = 70;
 const PIPE_GAP = 160;
 const PIPE_SPEED = 3.2;
 const PIPE_INTERVAL_MS = 1600;
+const BASE_FRAME_MS = 1000 / 60;
 
 const colors = {
   skyTop: "#7cc7ff",
@@ -103,13 +104,16 @@ function endGame() {
   overlayEl.classList.remove("hidden");
 }
 
-function update(now) {
+function update(now, deltaMs) {
   if (!state.running || state.gameOver) {
     return;
   }
 
-  state.velocity += GRAVITY;
-  state.birdY += state.velocity;
+  // Keep physics consistent across different display refresh rates.
+  const frameScale = Math.min(deltaMs / BASE_FRAME_MS, 2);
+
+  state.velocity += GRAVITY * frameScale;
+  state.birdY += state.velocity * frameScale;
 
   if (state.lastPipeAt === 0 || now - state.lastPipeAt >= PIPE_INTERVAL_MS) {
     spawnPipe();
@@ -117,7 +121,7 @@ function update(now) {
   }
 
   for (const pipe of state.pipes) {
-    pipe.x -= PIPE_SPEED;
+    pipe.x -= PIPE_SPEED * frameScale;
 
     if (!pipe.scored && pipe.x + PIPE_WIDTH < BIRD_X - BIRD_SIZE / 2) {
       pipe.scored = true;
@@ -246,7 +250,14 @@ function render() {
 }
 
 function loop(now) {
-  update(now);
+  if (typeof loop.lastNow !== "number") {
+    loop.lastNow = now;
+  }
+
+  const deltaMs = now - loop.lastNow;
+  loop.lastNow = now;
+
+  update(now, deltaMs);
   render();
   requestAnimationFrame(loop);
 }
