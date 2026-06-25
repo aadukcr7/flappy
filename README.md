@@ -18,16 +18,6 @@ python flappy_bird.py
 
 Open `index.html` locally, or deploy this repository to GitHub Pages.
 
-### GitHub Pages setup
-1. Push these files to your repository root:
-	- `index.html`
-	- `style.css`
-	- `game.js`
-2. In GitHub, go to **Settings -> Pages**.
-3. Under **Build and deployment**, set:
-	- **Source**: `Deploy from a branch`
-	- **Branch**: `main` (or your branch), folder `/ (root)`
-4. Save, then open the generated Pages URL.
 
 ## Controls
 - `Space` or left mouse click: flap
